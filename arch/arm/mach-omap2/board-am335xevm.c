@@ -3394,6 +3394,8 @@ static void setup_beaglebone(void)
 	 *this may effect power management in the future
 	 */
 	register_all_pwms();
+
+	asm ("mcr p15, 0, %0, c9, c14, 0\n\t" :: "r"(1));
 }
 
 
