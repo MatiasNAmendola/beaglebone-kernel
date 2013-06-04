@@ -143,6 +143,19 @@ DT_MACHINE_START(AM33XX_DT, "Generic AM33XX (Flattened Device Tree)")
 	.dt_compat	= am33xx_boards_compat,
 	.restart	= am33xx_restart,
 MACHINE_END
+
+MACHINE_START(AM335XEVM, "Generic AM33XX")
+        .atag_offset    = 0x100,
+	.reserve	= omap_reserve,
+	.map_io		= am33xx_map_io,
+	.init_early	= am33xx_init_early,
+	.init_irq	= omap_intc_of_init,
+	.handle_irq	= omap3_intc_handle_irq,
+	.init_machine	= omap_generic_init,
+	.timer		= &omap3_am33xx_timer,
+	.dt_compat	= am33xx_boards_compat,
+	.restart	= am33xx_restart,
+MACHINE_END
 #endif
 
 #ifdef CONFIG_ARCH_OMAP4
