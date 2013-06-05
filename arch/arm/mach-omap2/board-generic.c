@@ -144,7 +144,7 @@ DT_MACHINE_START(AM33XX_DT, "Generic AM33XX (Flattened Device Tree)")
 	.restart	= am33xx_restart,
 MACHINE_END
 
-MACHINE_START(AM335XEVM, "Generic AM33XX")
+MACHINE_START(3589, "Generic AM33XX")
         .atag_offset    = 0x100,
 	.reserve	= omap_reserve,
 	.map_io		= am33xx_map_io,
